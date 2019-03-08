@@ -15,7 +15,7 @@ RGB LED STATUS
 
 - __After__ the submission of ans OR qustion answer timeout `LED` status is again **Green**
 
-- _-After__ session timeout OR session is closed `LED` status is again **Blue**
+- __After__ session timeout OR session is closed `LED` status is again **Blue**
 
 Device
 ------
