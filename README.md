@@ -13,9 +13,9 @@ RGB LED STATUS
 
 - When question started OR client have to response to corresonding question. for answer `LED` status is **Green with blink**
 
-- _**`After_**` the submission of ans OR qustion answer timeout `LED` status is again **Green**
+- __After__ the submission of ans OR qustion answer timeout `LED` status is again **Green**
 
-- _**`After_**` session timeout OR session is closed `LED` status is again **Blue**
+- _-After__ session timeout OR session is closed `LED` status is again **Blue**
 
 Device
 ------
