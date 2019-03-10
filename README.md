@@ -1,4 +1,4 @@
-# Remote-Response-System-Client
+# Remote Response System Client
 Client implitation of remote response system for c/c++ and arduino language.
 
 RGB LED STATUS
