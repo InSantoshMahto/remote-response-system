@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MQTT</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Hello MQTT</h1>
+    <script src="../../node_modules/mqtt/dist/mqtt.min.js"></script>
+    <script>
+var client = mqtt.connect('mqtt://192.168.0.91:1883')
+
+        client.on('connect', function () {
+            client.subscribe('presence', function (err) {
+                if (!err) {
+                    client.publish('presence', 'Hello mqtt')
+                }
+            })
+        })
+
+        client.on('message', function (topic, message) {
+            // message is Buffer
+            console.log(message.toString())
+            client.end()
+        })
+    </script>
+</body>
+
+</html>

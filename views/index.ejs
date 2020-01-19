@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="refresh" content="30"> -->
+    <title>IoT</title>
+</head>
+
+<body>
+    <h1>DashBoard</h1>
+    <ul>
+        <% results.forEach(function(result) { %>
+        <li>
+            <%= result._id %> &emsp;
+            <%= result.name %>
+        </li>
+        <% }); %>
+    </ul><!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script> -->
+    <!-- <script>
+        let socket = io("http://192.168.0.91");
+        socket.on('connect', function () {
+            console.log(`conected to the server.`);
+        });
+        socket.on('test', function (data) {
+            console.log(data);
+        })
+        socket.emit('test', {
+            test: 'ok'
+        })
+    </script> -->
+    <script src="js/mqtt.js"></script>
+    <script>
+        let options = {
+            protocol: "mqtt",
+            host: "192.168.1.4",
+            port: 80,
+            username: "myUserName",
+            password: "myPass",
+            clientId: "websocket"
+        };
+        let client = mqtt.connect(options);
+
+        client.subscribe("myUserName/action");
+
+        client.on("message", function (topic, payload) {
+            console.log([topic, payload].join(": "));
+        });
+
+        setInterval(() => {
+            client.publish("myUserName/action", "websocket rockes");
+        }, 1000);
+    </script>
+</body>
+
+</html>

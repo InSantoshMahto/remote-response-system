@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "node js remote server",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "mqtt": "nodemon ./mqtt/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "insantoshmahto"
+  ],
+  "author": "santosh mahto",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13",
+    "morgan": "^1.9.1",
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
